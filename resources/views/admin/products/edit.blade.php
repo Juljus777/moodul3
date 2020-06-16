@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="outer-container bg-main-dark pb-4">
+    <div class="outer-container bg-main-dark py-5">
         <div class="container">
-            <h1>Uuenda toodet: {{$product->name}}</h1>
             <form action="/admin/products/{{$product->id}}" method="post" enctype="multipart/form-data" class="text-white">
                 @csrf
                 @method('PUT')
@@ -146,6 +145,17 @@
                         @enderror
                     </div>
                 </div>
+                <label>Toote kirjeldus:</label>
+                <div class="input-group mb-3">
+                        <textarea type="text"
+                                  class="form-control @error('description') border-danger @enderror"
+                                  placeholder=""
+                                  name="description"
+                                  style="height:200px;">{{$product->description}}</textarea>
+                </div>
+                @error('description')
+                <p class="text-danger">Palun täitke see väli</p>
+                @enderror
                 <div class="custom-control custom-checkbox mb-3">
                     <input type="checkbox" class="custom-control-input" name="multiplayer" id="multiplayer" @if($product->multiplayer) checked @endif>
                     <label class="custom-control-label" for="multiplayer">Mitmikmäng?</label>

@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
         $user->save();
-        $this->call(ProductSeeder::class);
+        //$this->call(ProductSeeder::class);
     }
 }

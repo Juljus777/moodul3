@@ -144,6 +144,17 @@
                         @enderror
                     </div>
                 </div>
+                <label>Toote kirjeldus:</label>
+                <div class="input-group mb-3">
+                        <textarea type="text"
+                                  class="form-control @error('description') border-danger @enderror"
+                                  placeholder=""
+                                  name="description"
+                                  style="height:200px;">{{old('description')}}</textarea>
+                </div>
+                @error('description')
+                <p class="text-danger">Palun täitke see väli</p>
+                @enderror
                 <div class="custom-control custom-checkbox mb-3">
                     <input type="checkbox" class="custom-control-input" name="multiplayer" id="multiplayer">
                     <label class="custom-control-label" for="multiplayer">Mitmikmäng?</label>

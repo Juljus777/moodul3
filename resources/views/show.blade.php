@@ -16,11 +16,7 @@
             </div>
             <div class="product-page-content px-5 order-2 bg-main" id="product-text-wrapper">
                 <p class="h2 text-white text-wrap pb-2"><b>{{$product->name}}</b></p>
-                <p class="text-white text-wrap pb-2">Game of the Year Edition sisaldab endas palju auhindu võitnud Witcher 3
-                    põhimängu - üle 250 Aasta Parima Mängu tiitli ja 2015. aasta kõige kiidetum mäng, mis on võitnud
-                    rohkem kui 800 auhinda kokku! Lisaks veel mõlemad laienduspakid Hearts of Stone ja Blood and Wine
-                    ning kõik ametlikud allalaetavad lisad, uuendused ja arendused.
-                </p>
+                <p class="text-white text-wrap pb-2">{{$product->description}}</p>
                 <p class="h2 text-white text-wrap pb-4">
                     {{$product->price}}€
                 </p>

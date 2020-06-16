@@ -16,7 +16,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'language' => $faker->languageCode,
         'game_type' => $faker->name,
         'pegi_rating' => $faker->numberBetween(6, 18),
-        'description' => $faker->sentences(5),
+        'description' => $faker->sentence(rand(20, 40)),
         'multiplayer' => rand(0,1)
     ];
 });

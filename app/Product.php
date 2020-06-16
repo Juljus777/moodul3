@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class Product extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['name', 'price', 'code', 'imagePath', 'manufacturer', 'platform', 'language', 'game_type', 'pegi_rating', 'multiplayer'];
+    protected $fillable = ['name', 'price', 'code', 'imagePath', 'manufacturer', 'platform', 'language', 'game_type', 'pegi_rating', 'multiplayer', 'description'];
 
     public static function makeImageStorage($product){
         $path = 'images/products/'.$product->id;

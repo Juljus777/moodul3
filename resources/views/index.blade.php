@@ -9,9 +9,9 @@
                     <div class="big-line"></div>
                 </div>
                 <div class="outer-container d-flex flex-row flex-wrap">
-                    @include('product')
-                    @include('product')
-                    @include('product')
+                    @foreach($newProducts as $product)
+                        @include('product')
+                    @endforeach
                 </div>
                 <div class="outer-container order-1">
                     <div class="outer-container mb-4">
@@ -19,15 +19,9 @@
                         <div class="big-line"></div>
                     </div>
                     <div class="outer-container d-flex flex-row flex-wrap">
-                        @include('product')
-                        @include('product')
-                        @include('product')
-                        @include('product')
-                        @include('product')
-                        @include('product')
-                        @include('product')
-                        @include('product')
-                        @include('product')
+                        @foreach($products as $product)
+                            @include('product')
+                        @endforeach
                     </div>
                 </div>
             </div>

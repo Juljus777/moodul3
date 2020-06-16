@@ -103,13 +103,14 @@ class ProductController extends Controller
         return request()->validate([
             'name' => 'required',
             'price' => 'required',
-            'code' => 'required',
             'manufacturer' => 'required',
             'platform' => 'required',
+            'code' => 'required',
             'language' => 'required',
             'game_type' => 'required',
             'pegi_rating' => 'required',
             'imagePath' => '',
+            'description' => 'required',
             'multiplayer' => ''
         ]);
     }
