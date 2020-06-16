@@ -23,7 +23,7 @@
     <link href="{{ asset('css/customButtons.css') }}" rel="stylesheet">
     <link reL="stylesheet" href="{{ asset('css/bootstrapOverRide.css') }}">
 </head>
-<body style="background-image:url('{{asset('images/body_background.jpg')}}')">
+<body class="bg-cover">
     <div id="app">
         @include('nav')
         <main class="pt-nav">

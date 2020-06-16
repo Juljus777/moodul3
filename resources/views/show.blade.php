@@ -5,7 +5,7 @@
         <div class="container d-flex flex-row flex-wrap">
             <div class="product-page-content order-0" id="product-image-container">
                 <div class="product-image-wrapper">
-                    <div class="product-page-image"
+                    <div class="product-page-image shadow-custom"
                          style="background-image:url('{{asset('images/products/'.$product->id.'/'.$product->imagePath)}}')">
 
                     </div>

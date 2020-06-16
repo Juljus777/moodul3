@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="jumbotron jumbotron-fluid inShopBanner mt-4" style="background-image:url('{{asset('images/banners/INNER_BANNER.jpg')}}')">
+        <div class="jumbotron jumbotron-fluid inShopBanner mt-4 bg-cover" style="background-image:url('{{asset('images/banners/INNER_BANNER.jpg')}}')">
             <div class="bannerDarkener">
                 <div class="container inShopBanner_ButtonContainer">
                     <button class="class=btn btn-lg btn-main inShopBanner_Button rounded-0" onclick="scrollToTop()">

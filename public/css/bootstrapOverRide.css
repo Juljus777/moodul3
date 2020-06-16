@@ -5,9 +5,18 @@ body{
     background-position:top left;
     background-attachment: fixed;
     background-repeat:no-repeat;
+    background-image:url('../images/body_background.jpg');
+    background-color:black;
+}
+.bg-cover{
+    background-size:cover;
 }
 nav{
     border-bottom: 2px solid white;
+    box-shadow:0 3px 3px rgba(0,0,0,0.5);
+}
+.shadow-custom{
+    box-shadow:4px 4px 4px rgba(0,0,0,0.9)
 }
 .pt-nav{
     padding-top:92px !important;
@@ -99,6 +108,8 @@ nav{
     width:100%;
     height:100%;
     background-color:rgba(0,0,0,0.5);
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
 }
 .hidden-link:hover{
     text-decoration: none;
@@ -132,6 +143,11 @@ nav{
     height:34px;
     z-index: 100;
     top:96px;
+}
+.modal-open {
+    overflow:hidden;
+    overflow-y:scroll;
+    padding-right:0 !important;
 }
 @media screen and (min-width: 320px) {
     .mobileNavLogo{
@@ -169,7 +185,6 @@ nav{
     }
     .J-nav-border{
         border-bottom: 2px solid white;
-        border-right: 0;
     }
     .J-card {
         width: 100%;
@@ -195,9 +210,9 @@ nav{
         margin-bottom:20px;
     }
     .J-card-content{
-        width:fit-content;
-        margin-left:auto;
-        margin-right:auto;
+        width: 290px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .prod-btn{
         margin-right: 0 !important;
@@ -261,7 +276,9 @@ nav{
         left:50%;
         transform: translate(-50%,0);
     }
-
+    li > .nav-font:hover{
+        background-color:rgba(0,0,0,0.2);
+    }
 }
 @media screen and (min-width: 576px) {
     .big-line{
@@ -369,7 +386,6 @@ nav{
     }
     .J-nav-border{
         border-bottom: 2px solid white;
-        border-right: 2px solid white;
     }
     .main-nav-item{
         min-width:200px;

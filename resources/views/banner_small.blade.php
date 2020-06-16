@@ -1,5 +1,5 @@
 <div class="container">
-    <div id="carouselDesktop" class="carousel slide main-banner" data-ride="carousel">
+    <div id="carouselDesktop" class="carousel slide main-banner" data-ride="carousel" data-interval="4000">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ asset('images/banners/WITCHER BANNER 1.jpg') }}" class="d-block w-100" alt="...">
@@ -22,7 +22,7 @@
         </a>
     </div>
 </div>
-<div id="carouselMobile" class="carousel slide main-banner" data-ride="carousel">
+<div id="carouselMobile" class="carousel slide main-banner" data-ride="carousel" data-interval="4000">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="{{ asset('images/banners/WITCHER BANNER 1 MOBILE.jpg') }}" class="d-block w-100" alt="...">

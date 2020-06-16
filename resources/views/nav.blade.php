@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-main fixed-top px-4" style="z-index:100">
-    <a class="navbar-brand mr-auto mobileNavLogo" href="{{ url('/pood') }}">
+    <a class="navbar-brand mr-auto mobileNavLogo" href="/">
         <img src="{{ asset('logos/SVG/logo_mini.svg') }}" width="auto" height="67px" style="padding:0;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -17,11 +17,11 @@
                     <a class="nav-link nav-font m-0 J-vertical-align-middle text-white {{Request::path() === '/' ? 'J-nav-border' : ''}}" href="/">ESILEHT</a>
                 </li>
                 <li class="nav-item mr-3">
-                    <a class="nav-link nav-font m-0 J-vertical-align-middle text-white {{strpos(Request::path(), 'pood') === 0 ? 'J-nav-border' : ''}}" href="/pood">POOD</a>
+                    <a class="nav-link nav-font m-0 J-vertical-align-middle text-white {{strpos(Request::path(), 'pood') === 0 ? 'J-nav-border' : ''}}" href="#">POOD</a>
                 </li>
             </ul>
             <ul class="navbar-nav main-nav-item order-1 desktopNavBarLogo">
-                <a class="navbar-brand ml-auto my-auto mr-0" href="{{ url('/') }}">
+                <a class="navbar-brand ml-auto my-auto mr-0" href="/">
                     <img src="{{ asset('logos/SVG/logo_mini.svg') }}" width="70px" height="auto" class="p-0">
                 </a>
             </ul>
@@ -44,7 +44,7 @@
                 </li>
                 @else
                     <li class="nav-item mr-3">
-                        <a class="nav-link nav-font mr-4 J-vertical-align-middle text-white {{strpos(Request::path(), 'admin/products') === 0 ? 'J-nav-border' : ''}}" href="/admin/products">ADMIN PANEEL</a>
+                        <a class="nav-link nav-font mr-4 J-vertical-align-middle text-white {{strpos(Request::path(), 'admin/products') === 0 ? 'J-nav-border' : ''}}" href="/admin/products">Tere admin!</a>
                     </li>
                 @endguest
                 <li class="nav-item navBarCart">
