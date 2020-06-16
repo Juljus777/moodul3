@@ -15,4 +15,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'ShopController@index');
-Route::get('/{product}', 'ShopController@show');
+Route::get('/{product}', 'ProductController@show');
+
+
+Route::get('/admin/products', 'ProductController@index');
+Route::post('/admin/products', 'ProductController@store');
+Route::get('/admin/products/create', 'ProductController@create');
+Route::get('/admin/products/{product}/edit', 'ProductController@edit');
+Route::put('/admin/products/{product}', 'ProductController@update')->name('updateProduct');
+
+Route::get('/admin/products/{product}/delete', 'ProductController@destroy');
+

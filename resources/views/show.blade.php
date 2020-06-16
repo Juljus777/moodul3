@@ -5,7 +5,8 @@
         <div class="container d-flex flex-row flex-wrap">
             <div class="product-page-content order-0" id="product-image-container">
                 <div class="product-image-wrapper">
-                    <div class="product-page-image" style="background-image:url('{{asset('images/products/1/witcher3.png')}}');">
+                    <div class="product-page-image"
+                         style="background-image:url('{{asset('images/products/'.$product->id.'/'.$product->imagePath)}}')">
 
                     </div>
                 </div>
@@ -14,16 +15,16 @@
                 <div class="product-page-mini-line"></div>
             </div>
             <div class="product-page-content px-5 order-2 bg-main" id="product-text-wrapper">
-                <p class="h2 text-white text-wrap pb-2"><b>WITCHER 3 COMPLETE EDITION</b></p>
+                <p class="h2 text-white text-wrap pb-2"><b>{{$product->name}}</b></p>
                 <p class="text-white text-wrap pb-2">Game of the Year Edition sisaldab endas palju auhindu võitnud Witcher 3
                     põhimängu - üle 250 Aasta Parima Mängu tiitli ja 2015. aasta kõige kiidetum mäng, mis on võitnud
                     rohkem kui 800 auhinda kokku! Lisaks veel mõlemad laienduspakid Hearts of Stone ja Blood and Wine
                     ning kõik ametlikud allalaetavad lisad, uuendused ja arendused.
                 </p>
                 <p class="h2 text-white text-wrap pb-4">
-                    5€
+                    {{$product->price}}€
                 </p>
-                    <button class="btn btn-main btn-lg prod-btn order-1 addTo" onclick="addToCart(1)">
+                    <button class="btn btn-main btn-lg prod-btn order-1 addTo" onclick="addToCart({{$product->id}})">
                         <b>Lisa ostukorvi</b>
                     </button>
             </div>
@@ -42,19 +43,19 @@
                         <tbody>
                         <tr>
                             <th>Mängu liik:</th>
-                            <td>inglise</td>
+                            <td>{{$product->game_type}}</td>
                         </tr>
                         <tr>
-                            <th>Mängu keel</th>
-                            <td>üksikmäng</td>
+                            <th>Mängu keel:</th>
+                            <td>{{$product->language}}</td>
                         </tr>
                         <tr>
                             <th>Mängu tüüp:</th>
-                            <td>üksikmäng</td>
+                            <td>{{$product->multiplayer ? 'Mitmikmäng' : 'Üksikmäng'}}</td>
                         </tr>
                         <tr>
                             <th>PEGI vanuse reiting:</th>
-                            <td>Soovitatav alates 18. eluaastast</td>
+                            <td>Soovitatav alates {{$product->pegi_rating}}. eluaastast</td>
                         </tr>
                         </tbody>
                     </table>
@@ -65,11 +66,11 @@
                         <tbody>
                         <tr>
                             <th>Platform:</th>
-                            <td>PlayStation 4</td>
+                            <td>{{$product->platform}}</td>
                         </tr>
                         <tr>
                             <th>Turustaja:</th>
-                            <td>Jüri Pärnust</td>
+                            <td>{{$product->manufacturer}}</td>
                         </tr>
                         </tbody>
                     </table>

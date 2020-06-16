@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->string('language');
             $table->string('game_type');
             $table->string('pegi_rating');
+            $table->string('description');
             $table->boolean('multiplayer')->default(0);
             $table->timestamps();
         });

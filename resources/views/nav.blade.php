@@ -38,11 +38,17 @@
                         </div>
                     </div>
                 </li>
+                @guest
                 <li class="nav-item mr-3">
                     <a class="nav-link nav-font mr-4 J-vertical-align-middle text-white {{strpos(Request::path(), 'login') === 0 ? 'J-nav-border' : ''}}" href="/login">LOGI SISSE</a>
                 </li>
+                @else
+                    <li class="nav-item mr-3">
+                        <a class="nav-link nav-font mr-4 J-vertical-align-middle text-white {{strpos(Request::path(), 'admin/products') === 0 ? 'J-nav-border' : ''}}" href="/admin/products">ADMIN PANEEL</a>
+                    </li>
+                @endguest
                 <li class="nav-item navBarCart">
-                    <a class="nav-link nav-font m-0 p-0 J-vertical-align-middle" href="/ostukorv">
+                    <a class="nav-link nav-font m-0 p-0 J-vertical-align-middle" href="#">
                         <div style="width:40px; height:45px">
                             @if(isset($cart))
                                 <p class="p-0 m-0 text-center" id="cartItemCounter">{{$cart->cartItemCount()}}</p>

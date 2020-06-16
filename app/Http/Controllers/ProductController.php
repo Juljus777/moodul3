@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('admin.index', compact('products'));
     }
 
     /**
@@ -24,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.products.create');
     }
 
     /**
@@ -35,7 +38,11 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::create($this->validateProduct());
+        Product::makeImageStorage($product);
+        Product::setMultiplayer($product, $request);
+        Product::storeImage($product, $request);
+        return redirect('admin/products');
     }
 
     /**
@@ -46,7 +53,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('show', compact('product'));
     }
 
     /**
@@ -57,7 +64,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -69,7 +76,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($this->validateProduct());
+        if($request->imagePath !== null) {
+            File::deleteDirectory('images/products/'.$product->id);
+            Product::makeImageStorage($product);
+            Product::storeImage($product, $request);
+        }
+        Product::setMultiplayer($product, $request);
+        return redirect('/admin/products');
     }
 
     /**
@@ -80,6 +94,23 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        File::deleteDirectory('images/products/'.$product->id);
+        $product->delete();
+        return redirect('admin/products');
+    }
+
+    public function validateProduct(){
+        return request()->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'code' => 'required',
+            'manufacturer' => 'required',
+            'platform' => 'required',
+            'language' => 'required',
+            'game_type' => 'required',
+            'pegi_rating' => 'required',
+            'imagePath' => '',
+            'multiplayer' => ''
+        ]);
     }
 }
