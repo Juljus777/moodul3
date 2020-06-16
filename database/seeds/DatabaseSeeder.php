@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $user = new User([
+            'name' => 'admin',
+            'email' => 'admin@mangudemaailm.ee',
+            'password' => bcrypt('admin'),
+            'superAdmin' => true,
+            'email_verified_at' => now(),
+        ]);
+        $user->save();
+        $this->call(ProductSeeder::class);
     }
 }
