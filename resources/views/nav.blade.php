@@ -25,14 +25,20 @@
                     <img src="{{ asset('logos/SVG/logo_mini.svg') }}" width="70px" height="auto" class="p-0">
                 </a>
             </ul>
-            <ul class="navbar-nav main-nav-item order-2">
+            <div class="navbar-nav main-nav-item order-2">
                 <li class="nav-item mr-3">
                     <div class="dropdown nav-link J-vertical-align-middle">
-                        <a class="dropdown-toggle text-white nav-font" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="dropdown-toggle text-white nav-font"
+                           href="#"
+                           role="button"
+                           id="dropdownMenuLink"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">
                             EESTI
                         </a>
                         <div class="dropdown-menu bg-main border-0" aria-labelledby="dropdownMenuLink" style="z-index:102">
-                            <a class="dropdown-item hover-main text-white" href="#">EESTI KEEL</a>
+                            <a class="dropdown-item hover-main text-white bg-lightgray" href="#">EESTI KEEL</a>
                             <a class="dropdown-item hover-main text-white" href="#">INGLISE KEEL</a>
                             <a class="dropdown-item hover-main text-white" href="#">VENE KEEL</a>
                         </div>
@@ -44,8 +50,30 @@
                 </li>
                 @else
                     <li class="nav-item mr-3">
-                        <a class="nav-link nav-font mr-4 J-vertical-align-middle text-white {{strpos(Request::path(), 'admin/products') === 0 ? 'J-nav-border' : ''}}" href="/admin/products">Tere admin!</a>
+                        <div class="dropdown nav-link J-vertical-align-middle">
+                            <a class="dropdown-toggle nav-font text-white"
+                               href="#"
+                               role="button"
+                               id="dropdownAdminLink"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               aria-expanded="false">Tere admin!</a>
+                            <div class="dropdown-menu bg-main border-0" aria-labelledby="dropdownAdminLink" style="z-index:102">
+                                <a class="dropdown-item hover-main text-white
+                                   {{strpos(Request::path(), 'admin/products') === 0 ? 'bg-lightgray' : ''}}"
+                                   href="/admin/products">Admin paneel</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <a class="dropdown-item hover-main text-white"  href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                            </div>
+                        </div>
                     </li>
+
                 @endguest
                 <li class="nav-item navBarCart">
                     <a class="nav-link nav-font m-0 p-0 J-vertical-align-middle" href="#">

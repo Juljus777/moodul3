@@ -14,9 +14,10 @@ body{
 nav{
     border-bottom: 2px solid white;
     box-shadow:0 3px 3px rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
 }
 .shadow-custom{
-    box-shadow:4px 4px 4px rgba(0,0,0,0.9)
+    box-shadow:4px 4px 4px rgba(0,0,0,0.6)
 }
 .pt-nav{
     padding-top:92px !important;
@@ -73,6 +74,9 @@ nav{
     background-color:white;
     margin-bottom:20px;
 }
+.bg-lightgray{
+    background-color:rgba(100,100,100,1);
+}
 .J-card-body{
     padding:0 !important;
 }
@@ -119,7 +123,8 @@ nav{
 }
 .social-wrapper{
     position: relative;
-    width:fit-content;
+    display:inline-block;
+    width:auto;
     left:50%;
     transform: translate(-50%,0);
 }
