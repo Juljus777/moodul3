@@ -1,0 +1,14 @@
+.btn-main{
+    background-color:transparent;
+    border:2px solid white;
+    color: white;
+    border-radius:0;
+}
+.btn-main:hover{
+    background-color: rgba(0,0,0,0.5);
+    color: rgba(240,240,240,0.9);
+}
+.btn-main:active{
+    background-color: black;
+    color:rgba(240,240,240,0.5);
+}
