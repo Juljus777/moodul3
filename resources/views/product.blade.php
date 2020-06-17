@@ -7,7 +7,7 @@
             </div>
         </a>
         <div class="outer-container J-card-content">
-            <p class="card-title text-white h4">{{ Illuminate\Support\Str::limit($product->name, 28) }}</p>
+            <a class="card-title text-white h4" href="/{{$product->id}}">{{ Illuminate\Support\Str::limit($product->name, 28) }}</a>
             <p class="card-text text-white h3 pb-2">{{$product->price}}€</p>
             <a href="/{{$product->id}}" class="btn btn-main btn-lg prod-btn text-white mr-2">Vaata lähemalt</a>
             <button class="btn btn-main btn-lg prod-btn order-1 addTo"

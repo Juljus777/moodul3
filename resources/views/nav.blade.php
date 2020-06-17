@@ -78,11 +78,7 @@
                 <li class="nav-item navBarCart">
                     <a class="nav-link nav-font m-0 p-0 J-vertical-align-middle" href="#">
                         <div style="width:40px; height:45px">
-                            @if(isset($cart))
-                                <p class="p-0 m-0 text-center" id="cartItemCounter">{{$cart->cartItemCount()}}</p>
-                            @else
-                                <p class="p-0 m-0 text-center text-dark" id="cartItemCounter">0</p>
-                            @endif
+                            <p class="p-0 m-0 text-center text-dark" id="cartItemCounter">0</p>
                             <img class="p-0 cartIcon"
                                  src="{{Request::path() === '/' ? asset('icons/cart_icon_white.svg') :
                                   asset('icons/cart_icon_white.svg')}}" width="40px" height="40px">
